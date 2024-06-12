@@ -1,0 +1,166 @@
+/* Con "Body" dico di dare questo font a tutto il sito */
+body {
+  font-family: "Gideon Roman", serif;
+}
+
+.font-2 {
+  font-family: "Lora", sans-serif !important;
+}
+
+.font-3 {
+  font-family: "Aguafina Script", sans-serif !important;
+}
+
+/* Definisco le variabile Css dove conservo il valore Hex del colore. Qui sotto (in root) è come se mi fossi salavato in un "cassetto" i codici dei colori, che vanno in automatico nei tag richiamandoli con 'var' (variabile) */
+
+:root {
+  --det-color: #170372;
+  --sec-color: #2d2c88af;
+  --acc-color: #037f83;
+}
+
+/* Colori Testo */
+.tx-1 {
+  color: var(--det-color);
+}
+
+.tx-2 {
+  color: var(--sec-color);
+}
+
+.tx-3 {
+  color: var(--acc-color);
+}
+
+/* bgc */
+
+.bg-1 {
+  background-color: var(--det-color);
+}
+
+.bg-2 {
+  background-color: var(--sec-color);
+}
+
+.bg-3 {
+  background-color: var(--acc-color);
+}
+
+/* Border (Bordi) */
+
+.borde-1 {
+  border-bottom: 1px solid var(--det-color) !important;
+}
+
+.borde-2 {
+  border-bottom: 1px solid var(--sec-color) !important;
+}
+
+.borde-3 {
+  border-bottom: 1px solid var(--acc-color) !important;
+}
+
+/* Bottone "Cerca qui" */
+.form-control {
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 30px;
+}
+
+/* Non fa comparire il bordo in nero quando ci clicchi sopra in modalità cellulare in "ispeziona"  */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* Mi creo qui sotto uno "Pseudo elemento" (non lo genero da html ma dirett da qui Css che si rifà come appoggio al padre H2 in questo caso, perchè all'H2 in html gli ho dato la classe "design-underline") */
+
+.design-underline {
+  position: relative;
+}
+
+/* adesso genero lo pseudo elemento che dovrà posizionarsi in maniera assoluta prima (AFTER)rispeto all'H2 */
+.design-underline::after {
+  position: absolute;
+  content: "";
+  bottom: -10%;
+  left: 0%;
+  width: 50%;
+  height: 5%;
+  background-color: var(--sec-color);
+}
+/* Fine "Pseudo elemento" */
+
+/* Con questa classe "Sticky" abbiamo fermato la sezione e quindi la parola "Descrizioni" mentre si scorre in basso sul sito */
+.destinazione-sticky {
+  position: sticky;
+  top: 100px;
+}
+
+/* Aggiustare le card sulla destra nella sezione Destinazioni, non lo sto usando più perche ho risolto allungando il testo dentro per farle coincidere tutte assieme */
+/* .custom-card {
+  width: 250px; 
+  height: 400px; 
+}
+.custom-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+/* Immagine della Section Prenota */
+.bg-image {
+  background-image: url(./assents/Illustrations/logo\ contattaci.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Sezione delle 3 foto-carosello iniziali del sito */
+/* Immagini Carosello */
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Ho preferito lavorarmi le 3 immagini del carosello in Css, e cancellare il rigo "img" dal Html */
+.slide1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assents/spiaggia5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.slide2 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assents/spiaggia4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.slide3 {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assents/spiaggia8.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 30%;
+  opacity: 0;
+  transition: 2s;
+}
+
+.carousel-item.active .carousel-caption {
+  opacity: 1;
+  top: 40%;
+}
+/* Fine lavoro della sezione delle 3 foto-carosello iniziali del sito */
